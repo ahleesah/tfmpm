@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Tfmpm</title>
+		<title>the fletching manufactory project management area</title>
 		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 		<%= csrf_meta_tags %>
-		<link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.css" media="screen" />
+		
+		<%= stylesheet_link_tag "bootstrap", "style" %>
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+		<link rel="apple-touch-icon" type="image/x-icon" href="img/favicon_lg.png">
 	</head>
 
-	<body>
+	<body class="container-fluid">
+		<!-- Logo and header -->
+		<div class="col-sm-12">
+			<a href="index.html">
+				<%= image_tag("logo.gif", :id => "logo", :alt => "the fletching manufactory logo") %>
+			</a>
+
+			<h5>
+				- smart web design + development for the aesthetically inclined -
+			</h5>
+		</div>
 
 		<% flash.each do |type, message| %>
 			<div class="alert flash <%= type %>">
