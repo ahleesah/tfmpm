@@ -6,7 +6,7 @@ describe "Creating todo lists" do
     options[:description] ||="This is my todo list."
     
     visit "/todo_lists"
-    click_link "New Todo list"
+    click_link "New To Do List"
     expect(page).to have_content("New todo_list")
     
     fill_in "Title", with: options[:title]
