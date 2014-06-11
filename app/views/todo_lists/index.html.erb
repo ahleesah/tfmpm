@@ -14,24 +14,26 @@
 			</br>
 		</div>
 		
-		<% @todo_lists.each do |todo_list| %>
-		<div id="<%= dom_id(todo_list) %>">
-			<div class="col-sm-3">
-				<%= todo_list.title %>
+		<div id="menu">
+			<% @todo_lists.each do |todo_list| %>
+			<div id="<%= dom_id(todo_list) %>">
+				<div class="col-sm-3">
+					<%= todo_list.title %>
+				</div>
+	
+				<div class="col-sm-3">
+					<%= todo_list.description %>
+				</div>
+	
+				<div class="col-sm-6">
+					<%= link_to "List Items", todo_list_todo_items_path(todo_list) %> |
+					<%= link_to 'Show', todo_list %> |
+				    <%= link_to 'Edit', edit_todo_list_path(todo_list) %> |
+				    <%= link_to 'Delete', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %>
+				</div>
 			</div>
-		
-			<div class="col-sm-3">
-				<%= todo_list.description %>
-			</div>
-		
-			<div class="col-sm-6">
-				<%= link_to "List Items", todo_list_todo_items_path(todo_list) %> |
-				<%= link_to 'Show', todo_list %> |
-			    <%= link_to 'Edit', edit_todo_list_path(todo_list) %> |
-			    <%= link_to 'Delete', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %>
-			</div>
+		    <% end %>
 		</div>
-	    <% end %>
 	</div>
 </br>
 </br>
