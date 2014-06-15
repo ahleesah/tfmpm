@@ -1,5 +1,7 @@
-<h1><%= @todo_list.title %> - Add Todo list Item </h1>
+<h3><%= @todo_list.title %>: Add To Do List Item </h3>
 
 <%= form_for [@todo_list, @todo_item] do |form| %>
 	<%= render partial: form %>
 <% end %>
+
+<%= link_to 'Back', todo_list_todo_items_path %>

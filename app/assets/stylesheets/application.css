@@ -14,22 +14,126 @@
  *= require_self
  */
 
+body {
+	text-align: center;
+	background: url("/assets/dotplus_wallpaper.png") repeat-x top;
+	font-family: "Courier New", Courier, monospace;
+	max-width: 768px;
+}
+
+h5 {
+	color: #FFFFFF;
+	font-weight: bold;
+	letter-spacing: 0.100em;
+	background-color: #9f9c96;
+	padding: 5px;
+	margin: 10px 0 20px 0px;
+	text-align: center;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+footer {
+	font-size: .625em;
+}
+
+#login {
+	text-align: right;
+	color: #5D5D5D;
+	font-size: 1.000em;
+	letter-spacing: 0.150em;
+	margin: 5px 20px 10px 0;
+}
+
+#logo {
+	max-width: 100%;
+	display: block;
+	padding: 15px 0 15px 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 div.alert {
-	border: 2px solid #aaa;
+	border: 2px solid #C23F38;
+	border-radius: 10px;
 	padding: 10px;
 }
 
 div.flash.success {
-	border: 2px solid green;
-	color: green;
+	border: 2px solid #90A860;
+	border-radius: 10px;
+	color: #90A860;
 }
 
 div.flash.error {
-	border: 2px solid red;
-	color: red;
+	border: 2px solid #C23F38;
+	border-radius: 10px;
+	color: #C23F38;
 }
 
 div.flash.notice {
-	border: 2px solid blue;
-	color: blue;
+	border: 2px solid #547DB3;
+	border-radius: 10px;
+	color: #547DB3;
 }
+
+p.notice {
+	border: 2px solid #547DB3;
+	border-radius: 10px;
+	color: #547DB3;
+}
+
+#error_explanation {
+  border: 2px solid #C23F38;
+  border-radius: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  background-color: #f0f0f0;
+  h5 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #C23F38;
+  }
+  ul li {
+    font-size: 12px;
+
+  }
+}
+
+a {
+	color: #5D5D5D;
+  &:visited {
+    color: #5D5D5D;
+  }
+  &:active {
+	color: #5D5D5D;
+  }
+  &:hover {
+	color: #5D5D5D;
+	text-decoration: none;
+  }
+}
+
+ul.todo_lists {
+	color: #5D5D5D;
+	font-size: 1.000em;
+	text-align: left;
+	letter-spacing: 0.075em;
+	font-family: "Courier New", Courier, monospace;
+	list-style-type: none;
+}
+
+ul.todo_items {
+	color: #5D5D5D;
+	font-size: 1.000em;
+	text-align: left;
+	letter-spacing: 0.075em;
+	font-family: "Courier New", Courier, monospace;
+	list-style-type: none;
+}
+

@@ -9,7 +9,7 @@ describe "Editing todo items" do
     within("#todo_item_#{todo_item.id}") do
       click_link "Edit"
     end
-    fill_in "Content", with: "Lots of Milk"
+    fill_in "Item", with: "Lots of Milk"
     click_button "Save"
     expect(page).to have_content("Saved todo list item.")
     todo_item.reload
@@ -21,7 +21,7 @@ describe "Editing todo items" do
     within("#todo_item_#{todo_item.id}") do
       click_link "Edit"
     end
-    fill_in "Content", with: ""
+    fill_in "Item", with: ""
     click_button "Save"
     expect(page).to_not have_content("Saved todo list item.")
     expect(page).to have_content("Content can't be blank")
@@ -34,7 +34,7 @@ describe "Editing todo items" do
     within("#todo_item_#{todo_item.id}") do
       click_link "Edit"
     end
-    fill_in "Content", with: "1"
+    fill_in "Item", with: "1"
     click_button "Save"
     expect(page).to_not have_content("Saved todo list item.")
     expect(page).to have_content("Content is too short")
