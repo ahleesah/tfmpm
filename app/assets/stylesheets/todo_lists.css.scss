@@ -1,3 +1,20 @@
 // Place all the styles related to the todo_lists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.todo-list {
+	color: #5D5D5D;
+	font-size: 1.000em;
+	text-align: left;
+	letter-spacing: 0.075em;
+	font-family: "Courier New", Courier, monospace;
+	list-style-type: none;
+}
+
+.admin-todo-list {
+	display: none;
+}
+
+.todo-list.hover .admin-todo-list {
+	display: inline;
+}

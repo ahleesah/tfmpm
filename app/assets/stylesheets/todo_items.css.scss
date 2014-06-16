@@ -1,3 +1,21 @@
 // Place all the styles related to the todo_items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.todo-items {
+	color: #5D5D5D;
+	font-size: 1.000em;
+	text-align: left;
+	letter-spacing: 0.075em;
+	font-family: "Courier New", Courier, monospace;
+	list-style-type: none;
+}
+
+p.todo-items-icons {
+	color: #5D5D5D;
+	font-size: 1.000em;
+	text-align: right;
+	letter-spacing: 0.075em;
+	padding: 5px;
+	margin: 10px 0 20px 0px;
+}

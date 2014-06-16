@@ -1,24 +1,34 @@
 <div class="col-sm-12">
-	<h3>To Do Lists</h3>
+	<h3>Timeline</h3>
+</div>
 
-	<ul class="todo_lists">
-		<% @todo_lists.each do |todo_list| %>
-			<li id="<%= dom_id(todo_list) %>">
+<div class="col-sm-6">
+	<h3>To Do Lists</h3>
+	
+	<% @todo_lists.each do |todo_list| %>
+		<div class="todo-list">
+			<div class="todo-list" "hover" id="<%= dom_id(todo_list) %>">
 				Title: <%= todo_list.title %>
 				<br />
 				Description: <%= todo_list.description %>
-				<br />
-				<p class="menu">
-					<%= link_to "List Items", todo_list_todo_items_path(todo_list) %> |
-				    <%= link_to 'Edit', edit_todo_list_path(todo_list) %> |
-				    <%= link_to 'Delete', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+				<p>
+					<%= link_to image_tag("list.png", :alt => "List Items", :title => "List Items"), todo_list_todo_items_path(todo_list) %>
+					<span class="admin-todo-list">
+						<%= link_to image_tag("edit.png", :alt => "Edit To Do List", :title => "Edit To Do List"), edit_todo_list_path(todo_list) %>
+				    <%= link_to image_tag("delete.png", :alt => "Delete To Do List", :title => "Delete To Do List"), todo_list, method: :delete, data: { confirm: "Are you sure?" } %>
+					</span>
 				</p>
 				<hr>
-			</li>
-	    <% end %>
-	</ul>
+			</div>
+		</div>	
+    <% end %>
 	
 	<div class="col-sm-12">	
-		<%= link_to 'New To Do List', new_todo_list_path %> 
+			<%= link_to "New To Do List", new_todo_list_path %> 
 	</div>
+</div>
+
+<div class="col-sm-6">
+	<h3>Latest Prototype</h3>
 </div>

@@ -33,6 +33,15 @@ h5 {
 	-moz-border-radius: 10px;
 }
 
+p {
+	color: #5D5D5D;
+	font-size: 1.000em;
+	text-align: left;
+	letter-spacing: 0.075em;
+	padding: 5px;
+	margin: 10px 0 20px 0px;
+}
+
 footer {
 	font-size: .625em;
 }
@@ -88,7 +97,7 @@ p.notice {
   border-radius: 10px;
   padding-top: 7px;
   padding-bottom: 7px;
-  background-color: #f0f0f0;
+  background-color: #F0F0F0;
   h5 {
     text-align: left;
     font-weight: bold;
@@ -100,40 +109,16 @@ p.notice {
     color: #C23F38;
   }
   ul li {
-    font-size: 12px;
-
+    font-size: 1.000em;
   }
 }
 
 a {
 	color: #5D5D5D;
-  &:visited {
-    color: #5D5D5D;
-  }
-  &:active {
-	color: #5D5D5D;
-  }
-  &:hover {
+}
+
+a:hover {
 	color: #5D5D5D;
 	text-decoration: none;
-  }
+	border-bottom: none;
 }
-
-ul.todo_lists {
-	color: #5D5D5D;
-	font-size: 1.000em;
-	text-align: left;
-	letter-spacing: 0.075em;
-	font-family: "Courier New", Courier, monospace;
-	list-style-type: none;
-}
-
-ul.todo_items {
-	color: #5D5D5D;
-	font-size: 1.000em;
-	text-align: left;
-	letter-spacing: 0.075em;
-	font-family: "Courier New", Courier, monospace;
-	list-style-type: none;
-}
-

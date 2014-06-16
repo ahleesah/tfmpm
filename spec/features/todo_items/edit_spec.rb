@@ -7,7 +7,7 @@ describe "Editing todo items" do
   it "is successful with valid content" do
     visit_todo_list(todo_list)
     within("#todo_item_#{todo_item.id}") do
-      click_link "Edit"
+      click_link("Edit To Do Item")
     end
     fill_in "Item", with: "Lots of Milk"
     click_button "Save"
@@ -19,7 +19,7 @@ describe "Editing todo items" do
   it "is unsuccessful with no content" do
     visit_todo_list(todo_list)
     within("#todo_item_#{todo_item.id}") do
-      click_link "Edit"
+      click_link("Edit To Do Item")
     end
     fill_in "Item", with: ""
     click_button "Save"
@@ -32,7 +32,7 @@ describe "Editing todo items" do
   it "is unsuccessful with not enough content" do
     visit_todo_list(todo_list)
     within("#todo_item_#{todo_item.id}") do
-      click_link "Edit"
+      click_link("Edit To Do Item")
     end
     fill_in "Item", with: "1"
     click_button "Save"
