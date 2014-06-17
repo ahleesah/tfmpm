@@ -5,7 +5,7 @@
 		<% @todo_list.todo_items.each do |todo_item| %>
 			<div id="<%= dom_id(todo_item) %>">
 				<% if todo_item.completed == true %>
-					<div class="col-sm-6" "todo-items">
+					<div class="col-sm-6 todo-items">
 						<p class="todo-item">
 							<strike><%= todo_item.content %></strike>
 						</p>
@@ -21,7 +21,7 @@
 					</div>
 		
 				<% else %>
-					<div class="col-sm-6" "todo-items">
+					<div class="col-sm-6 todo-items">
 						<p class="todo-item">
 							<%= todo_item.content %>
 						</p>
@@ -38,10 +38,10 @@
 				<% end %>
 			</div>
 		<% end %>
-
-		<div class="col-sm-12">
-			<%= link_to "New To Do Item", new_todo_list_todo_item_path %> |
-			<%= link_to 'Back', todo_lists_path %>
-		</div>	
 	</div>
+	
+	<div class="col-sm-12">
+		<%= link_to "New To Do Item", new_todo_list_todo_item_path %> |
+		<%= link_to 'Back', todo_lists_path %>
+	</div>	
 </body>
