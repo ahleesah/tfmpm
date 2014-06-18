@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :paperclip_images
+  
   resources :todo_lists do
     resources :todo_items do
       member do
@@ -8,7 +10,7 @@ Rails.application.routes.draw do
     end
   end
 
-  root 'todo_lists#index'
+  root 'dashboards#index'
 end
 
   # The priority is based upon order of creation: first created -> highest priority.

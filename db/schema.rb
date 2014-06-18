@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140614175043) do
+ActiveRecord::Schema.define(version: 20140617113758) do
+
+  create_table "paperclip_images", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "asset_file_name"
+    t.string   "asset_content_type"
+    t.integer  "asset_file_size"
+    t.datetime "asset_updated_at"
+  end
 
   create_table "todo_items", force: true do |t|
     t.integer  "todo_list_id"

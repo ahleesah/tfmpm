@@ -5,7 +5,7 @@ describe "Creating todo lists" do
     options[:title] ||= "My todo list"
     options[:description] ||="This is my todo list."
     
-    visit "/todo_lists"
+    visit "/"
     click_link "New To Do List"
     expect(page).to have_content("New To Do List")
     
@@ -26,7 +26,7 @@ describe "Creating todo lists" do
     expect(page).to have_content("error")
     expect(TodoList.count).to eq(0)
     
-    visit "/todo_lists"
+    visit "/"
     expect(page).to_not have_content("This is what I'm doing today.")
   end
   
@@ -37,7 +37,7 @@ describe "Creating todo lists" do
     expect(page).to have_content("error")
     expect(TodoList.count).to eq(0)
     
-    visit "/todo_lists"
+    visit "/"
     expect(page).to_not have_content("This is what I'm doing today.")
   end
   
@@ -49,7 +49,7 @@ describe "Creating todo lists" do
     expect(page).to have_content("error")
     expect(TodoList.count).to eq(0)
     
-    visit "/todo_lists"
+    visit "/"
     expect(page).to_not have_content("Grocery list")
   end
   
@@ -61,7 +61,7 @@ describe "Creating todo lists" do
     expect(page).to have_content("error")
     expect(TodoList.count).to eq(0)
     
-    visit "/todo_lists"
+    visit "/"
     expect(page).to_not have_content("Grocery list")
   end
 end

@@ -1,47 +1,44 @@
-<body class="container-fluid">
-	<div class="col-sm-12">
-		<h3><%= @todo_list.title %></h3>
+<h3><%= @todo_list.title %></h3>
 
-		<% @todo_list.todo_items.each do |todo_item| %>
-			<div id="<%= dom_id(todo_item) %>">
-				<% if todo_item.completed == true %>
-					<div class="col-sm-6 todo-items">
-						<p class="todo-item">
-							<strike><%= todo_item.content %></strike>
-						</p>
-					</div>
-					<div class="col-sm-6">
-						<p class="todo-items-icons">
-							<%= link_to image_tag("complete.png", :alt => "Mark Complete", :title => "Mark Complete"), complete_todo_list_todo_item_path(todo_item), method: :patch %>
-							<%= link_to image_tag("incomplete.png", :alt => "Mark Incomplete", :title => "Mark Incomplete"), incomplete_todo_list_todo_item_path(todo_item), method: :patch %>
-							<%= link_to image_tag("edit.png", :alt => "Edit To Do Item", :title => "Edit To Do Item"), edit_todo_list_todo_item_path(todo_item) %>
-							<%= link_to image_tag("delete.png", :alt => "Delete To Do Item", :title => "Delete To Do Item"), todo_list_todo_item_path(todo_item), method: :delete,
-								 data: { confirm: "Are you sure?" } %>
-						 </p>
-					</div>
-		
-				<% else %>
-					<div class="col-sm-6 todo-items">
-						<p class="todo-item">
-							<%= todo_item.content %>
-						</p>
-					</div>
-					<div class="col-sm-6">
-						<p class="todo-items-icons">
-							<%= link_to image_tag("complete.png", :alt => "Mark Complete", :title => "Mark Complete"), complete_todo_list_todo_item_path(todo_item), method: :patch %>
-							<%= link_to image_tag("incomplete.png", :alt => "Mark Incomplete", :title => "Mark Incomplete"), incomplete_todo_list_todo_item_path(todo_item), method: :patch %>
-							<%= link_to image_tag("edit.png", :alt => "Edit To Do Item", :title => "Edit To Do Item"), edit_todo_list_todo_item_path(todo_item) %>
-							<%= link_to image_tag("delete.png", :alt => "Delete To Do Item", :title => "Delete To Do Item"), todo_list_todo_item_path(todo_item), method: :delete,
-								 data: { confirm: "Are you sure?" } %>
-						</p>
-					</div>
-				<% end %>
+<% @todo_list.todo_items.each do |todo_item| %>
+	<div id="<%= dom_id(todo_item) %>">
+		<% if todo_item.completed == true %>
+			<div class="col-sm-6 todo-items">
+				<p class="todo-item">
+					<strike><%= todo_item.content %></strike>
+				</p>
+			</div>
+			<div class="col-sm-6">
+				<p class="todo-items-icons">
+					<%= link_to image_tag("complete.png", :alt => "Mark Complete", :title => "Mark Complete"), complete_todo_list_todo_item_path(todo_item), method: :patch %>
+					<%= link_to image_tag("incomplete.png", :alt => "Mark Incomplete", :title => "Mark Incomplete"), incomplete_todo_list_todo_item_path(todo_item), method: :patch %>
+					<%= link_to image_tag("edit.png", :alt => "Edit To Do Item", :title => "Edit To Do Item"), edit_todo_list_todo_item_path(todo_item) %>
+					<%= link_to image_tag("delete.png", :alt => "Delete To Do Item", :title => "Delete To Do Item"), todo_list_todo_item_path(todo_item), method: :delete,
+						 data: { confirm: "Are you sure?" } %>
+				 </p>
+			</div>
+
+		<% else %>
+			<div class="col-sm-6 todo-items">
+				<p class="todo-item">
+					<%= todo_item.content %>
+				</p>
+			</div>
+			<div class="col-sm-6">
+				<p class="todo-items-icons">
+					<%= link_to image_tag("complete.png", :alt => "Mark Complete", :title => "Mark Complete"), complete_todo_list_todo_item_path(todo_item), method: :patch %>
+					<%= link_to image_tag("incomplete.png", :alt => "Mark Incomplete", :title => "Mark Incomplete"), incomplete_todo_list_todo_item_path(todo_item), method: :patch %>
+					<%= link_to image_tag("edit.png", :alt => "Edit To Do Item", :title => "Edit To Do Item"), edit_todo_list_todo_item_path(todo_item) %>
+					<%= link_to image_tag("delete.png", :alt => "Delete To Do Item", :title => "Delete To Do Item"), todo_list_todo_item_path(todo_item), method: :delete,
+						 data: { confirm: "Are you sure?" } %>
+				</p>
 			</div>
 		<% end %>
 	</div>
-	
-	<div class="col-sm-12">
-		<%= link_to "New To Do Item", new_todo_list_todo_item_path %> |
-		<%= link_to 'Back', todo_lists_path %>
-	</div>	
-</body>
+<% end %>
+
+
+<div class="col-sm-12">
+	<%= link_to "New To Do Item", new_todo_list_todo_item_path %> |
+	<%= link_to 'Back', root_path %>
+</div>	
