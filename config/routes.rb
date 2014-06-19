@@ -1,8 +1,24 @@
 Rails.application.routes.draw do
   devise_for :users
+
+  devise_scope :user do
+    get "signup", to: "devise/registrations#new"
+    get "login", to: "devise/sessions#new"
+    get "logout", to: "devise/sessions#destroy"
+    get "dashboard", to: "dashboards#index"
+
+    authenticated :user do
+      root 'dashboards#index', as: :authenticated_root
+    end
+
+    unauthenticated do
+      root 'devise/sessions#new', as: :unauthenticated_root
+    end
+    
+  end
   
   resources :paperclip_images
-  
+
   resources :todo_lists do
     resources :todo_items do
       member do
@@ -11,8 +27,6 @@ Rails.application.routes.draw do
       end
     end
   end
-
-  root 'dashboards#index'
 end
 
   # The priority is based upon order of creation: first created -> highest priority.

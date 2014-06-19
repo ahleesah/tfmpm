@@ -25,7 +25,8 @@ class TodoListsController < ApplicationController
   # POST /todo_lists.json
   def create
     @todo_list = TodoList.new(todo_list_params)
-
+    @todo_list.user = current_user
+    
     respond_to do |format|
       if @todo_list.save
         format.html { redirect_to @todo_list, notice: 'To do list was successfully created.' }
@@ -35,6 +36,8 @@ class TodoListsController < ApplicationController
         format.json { render json: @todo_list.errors, status: :unprocessable_entity }
       end
     end
+    
+
   end
 
   # PATCH/PUT /todo_lists/1

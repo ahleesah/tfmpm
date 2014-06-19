@@ -10,6 +10,13 @@
 	</head>
 
 	<body class="container-fluid">
+		<div id="login">
+			<% if current_user %>
+		    	Logged in as <%= current_user.email %>.
+		    	<%= link_to "Log Out", logout_path %>
+		  	<% end %>
+		</div>
+		
 		<!-- Logo and header -->
 		<div class="col-sm-12">
 			<a href="index.html">
