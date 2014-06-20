@@ -5,7 +5,6 @@ Rails.application.routes.draw do
     get "signup", to: "devise/registrations#new"
     get "login", to: "devise/sessions#new"
     get "logout", to: "devise/sessions#destroy"
-    get "dashboard", to: "dashboards#index"
 
     authenticated :user do
       root 'dashboards#index', as: :authenticated_root
@@ -14,7 +13,6 @@ Rails.application.routes.draw do
     unauthenticated do
       root 'devise/sessions#new', as: :unauthenticated_root
     end
-    
   end
   
   resources :paperclip_images
