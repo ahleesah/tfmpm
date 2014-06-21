@@ -1,0 +1,22 @@
+<%= form_for(@paperclip_image, html: { multipart: true }) do |f| %>
+	<% if @paperclip_image.errors.any? %>
+		<div id="error_explanation">
+			<h4><%= pluralize(@paperclip_image.errors.count, "error") %> prohibited this paperclip_image from being saved:</h4>
+
+			<ul>
+				<% @paperclip_image.errors.full_messages.each do |message| %>
+					<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<div class="form-group">
+		<%= f.file_field :asset, html: { class: "form-control form-field-width" } %>
+	</div>
+
+	<div class="actions form-group">
+		<%= f.submit "Save", class: "btn btn-default", id: "btn-submit" %>
+	</div>
+	
+<% end %>

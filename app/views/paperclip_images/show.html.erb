@@ -1,0 +1,8 @@
+<%= image_tag(@paperclip_image.asset.url(:medium), class: "img-thumbnail") %>
+
+<br />
+
+<span align="center">
+	<%= link_to "Reupload", edit_paperclip_image_path(@paperclip_image) %> |
+	<%= link_to "Back", authenticated_root_path %>
+</span>

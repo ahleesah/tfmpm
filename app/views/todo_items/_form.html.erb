@@ -1,0 +1,23 @@
+<% if @todo_item.errors.any? %>
+	<div id="error_explanation">
+		<h4><%= pluralize(@todo_item.errors.count, "error") %> prohibited this todo item from being saved:</h4>
+
+		<ul>
+			<% @todo_item.errors.full_messages.each do |msg| %>
+			  <li><%= msg %></li>
+			<% end %>
+		</ul>
+	</div>
+	<% else %>
+<% end %>
+
+<div class="form-group">
+	<%= form.label :content, "Item" %>
+	<%= form.text_field :content, class: "form-control form-field-width" %>
+</div>
+
+<div class="form-group">
+	<%= form.submit "Save", class: "btn btn-default", id: "btn-submit" %>
+</div>
+
+
