@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140619085013) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "paperclip_images", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -23,7 +26,7 @@ ActiveRecord::Schema.define(version: 20140619085013) do
     t.integer  "user_id"
   end
 
-  add_index "paperclip_images", ["user_id"], name: "index_paperclip_images_on_user_id"
+  add_index "paperclip_images", ["user_id"], name: "index_paperclip_images_on_user_id", using: :btree
 
   create_table "todo_items", force: true do |t|
     t.integer  "todo_list_id"
@@ -34,8 +37,8 @@ ActiveRecord::Schema.define(version: 20140619085013) do
     t.integer  "user_id"
   end
 
-  add_index "todo_items", ["todo_list_id"], name: "index_todo_items_on_todo_list_id"
-  add_index "todo_items", ["user_id"], name: "index_todo_items_on_user_id"
+  add_index "todo_items", ["todo_list_id"], name: "index_todo_items_on_todo_list_id", using: :btree
+  add_index "todo_items", ["user_id"], name: "index_todo_items_on_user_id", using: :btree
 
   create_table "todo_lists", force: true do |t|
     t.string   "title"
@@ -45,7 +48,7 @@ ActiveRecord::Schema.define(version: 20140619085013) do
     t.integer  "user_id"
   end
 
-  add_index "todo_lists", ["user_id"], name: "index_todo_lists_on_user_id"
+  add_index "todo_lists", ["user_id"], name: "index_todo_lists_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "first_name"
@@ -65,7 +68,7 @@ ActiveRecord::Schema.define(version: 20140619085013) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
