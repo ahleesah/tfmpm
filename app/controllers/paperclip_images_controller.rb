@@ -1,10 +1,10 @@
 class PaperclipImagesController < ApplicationController
   before_action :set_paperclip_image, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /paperclip_images
   # GET /paperclip_images.json
   def index
-    @paperclip_images = PaperclipImage.all
+    @paperclip_images = current_user.paperclip_images.all
   end
 
   # GET /paperclip_images/1

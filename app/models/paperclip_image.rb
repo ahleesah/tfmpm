@@ -4,7 +4,7 @@ class PaperclipImage < ActiveRecord::Base
   has_attached_file :asset, styles: {
     medium: "300x300>",
     small: "140x140>",
-    thumb: "60x64!"
+    thumb: "60x60!"
   }
   
   validates_attachment_content_type :asset, :content_type => /\Aimage\/.*\Z/
