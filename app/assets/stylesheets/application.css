@@ -16,7 +16,7 @@
 
 body {
 	text-align: center;
-	background: url("/assets/dotplus_wallpaper.png") repeat-x top;
+	background: url("/assets/geometric_background.png") no-repeat;
 	font-family: "Courier New", Courier, monospace;
 	max-width: 768px;
 }

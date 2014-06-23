@@ -8,11 +8,9 @@
 				<br />
 				Description: <%= todo_list.description %>
 
-				<p>
-					<span class="todo-lists-icons">
-						<%= link_to image_tag("list.png", alt: "List Items", title: "List Items"), todo_list_todo_items_path(todo_list) %>
-					</span>
-					<span class="admin-todo-list img-link todo-lists-icons">
+				<p class="todo-lists-icons">
+					<%= link_to image_tag("list.png", alt: "List Items", title: "List Items"), todo_list_todo_items_path(todo_list) %>
+					<span class="admin-todo-list">
 						<%= link_to image_tag("edit.png", alt: "Edit To Do List", title: "Edit To Do List"), edit_todo_list_path(todo_list) %>
 				    <%= link_to image_tag("delete.png", alt: "Delete To Do List", title: "Delete To Do List"), todo_list, method: :delete, data: { confirm: "Are you sure?" } %>
 					</span>
