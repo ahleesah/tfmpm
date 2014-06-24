@@ -4,10 +4,11 @@
 	<% @todo_lists.each do |todo_list| %>
 		<div class="todo-list">
 			<div class="todo-list" "hover" id="<%= dom_id(todo_list) %>">
-				Title: <%= todo_list.title %>
-				<br />
-				Description: <%= todo_list.description %>
-
+				<p>
+					Title: <%= todo_list.title %>
+					<br />
+					Description: <%= todo_list.description %>
+				</p>
 				<p class="todo-lists-icons">
 					<%= link_to image_tag("list.png", alt: "List Items", title: "List Items"), todo_list_todo_items_path(todo_list) %>
 					<span class="admin-todo-list">
@@ -37,7 +38,6 @@
 
 	<% else %>
 		<%= link_to image_tag(@paperclip_image.asset.url(:medium), class: "img-thumbnail"), @paperclip_image.asset.url %>
-
 		<div class="col-sm-12">
 			<p class="paperclip-images-icons ">
 				<%= link_to image_tag("edit.png", alt: "Reupload Image", title: "Reupload Image"), edit_paperclip_image_path(@paperclip_image) %>
