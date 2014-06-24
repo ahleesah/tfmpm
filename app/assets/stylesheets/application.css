@@ -19,6 +19,7 @@ body {
 	background: url("/assets/geometric_background.png") no-repeat;
 	font-family: "Courier New", Courier, monospace;
 	max-width: 768px;
+	background-color: #F0F0F0;
 }
 
 h5 {
