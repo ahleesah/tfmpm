@@ -16,6 +16,7 @@ gem 'paperclip', '~> 4.1'
 gem 'aws-sdk'
 gem 'devise'
 gem 'rails_12factor',            group: :production
+gem 'unicorn'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
