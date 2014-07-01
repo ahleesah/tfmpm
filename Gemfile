@@ -17,6 +17,7 @@ gem 'aws-sdk'
 gem 'devise'
 gem 'rails_12factor',            group: :production
 gem 'unicorn'
+gem 'chartkick'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'

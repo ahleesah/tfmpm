@@ -2,8 +2,9 @@
 <html>
 	<head>
 		<title>the fletching manufactory project management area</title>
-		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+		<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 		<%= csrf_meta_tags %>
 		<link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.png">
 		<link rel="apple-touch-icon" type="image/x-icon" href="/assets/favicon_lg.png">
@@ -28,15 +29,15 @@
 			</h5>
 		</div>
 
-		<div class="col-sm-12">
+		<div class = "col-sm-12">
 			<% flash.each do |type, message| %>
 				<div class="alert flash <%= type %>">
 					<%= message %>
 				</div>
 			<% end %>
-			
-			<%= yield %>
 		</div>
+		
+		<%= yield %>
 			
 		<div class="col-sm-12">
 			<footer>

@@ -1,48 +1,74 @@
-<div class="col-sm-6">
-	<h3>To Do Lists</h3>
-	
-	<% @todo_lists.each do |todo_list| %>
-		<div class="todo-list">
-			<div class="todo-list" "hover" id="<%= dom_id(todo_list) %>">
-				<p>
-					Title: <%= todo_list.title %>
-					<br />
-					Description: <%= todo_list.description %>
-				</p>
-				<p class="todo-lists-icons">
-					<%= link_to image_tag("list.png", alt: "List Items", title: "List Items"), todo_list_todo_items_path(todo_list) %>
-					<span class="admin-todo-list">
-						<%= link_to image_tag("edit.png", alt: "Edit To Do List", title: "Edit To Do List"), edit_todo_list_path(todo_list) %>
-				    <%= link_to image_tag("delete.png", alt: "Delete To Do List", title: "Delete To Do List"), todo_list, method: :delete, data: { confirm: "Are you sure?" } %>
-					</span>
-				</p>
-				<hr>
-			</div>
-		</div>	
-    <% end %>
+<div class="col-sm-12">
+	<h3>Timeline</h3>
 
-
-	<p>
-		<%= link_to "New To Do List", new_todo_list_path %>
-	</p>
+	<% if current_user.email == "anaungvi.etc@gmail.com" %>
+		<%= timeline [
+		  ["Concept Planning and Design", "2014-07-04", "2014-07-11"],
+		  ["Primary Page Development", "2014-07-12", "2014-07-17"],
+		  ["Primary Page Revisions/Secondary Page Development", "2014-07-18", "2014-08-01"],
+		  ["Review and Testing", "2014-08-02", "2014-08-08"],
+		  ["Final Revision, Acceptance, and Deployment/Go Live", "2014-08-09", "2014-08-15"],
+		  ["Administrator Training", "2014-08-16", "2014-08-22"]
+		] %>
+	<% else %>
+		<%= timeline [
+		  ["Concept Planning and Design", "2014-01-01", "2014-12-31"],
+		  ["Primary Page Development", "2014-01-01", "2014-12-31"],
+		  ["Primary Page Revisions/Secondary Page Development", "2014-01-01", "2014-12-31"],
+		  ["Review and Testing", "2014-01-01", "2014-12-31"],
+		  ["Final Revision, Acceptance, and Deployment/Go Live", "2014-01-01", "2014-12-31"],
+		  ["Administrator Training", "2014-01-01", "2014-12-31"]
+		] %>
+	<% end %>
 </div>
 
-<div class="col-sm-6">
-	<h3> Latest Prototype </h3>
-	<% if @paperclip_image.nil? %>
-		<h4>no prototypes available</h4>
-		<div class="col-sm-12">
-			<p class="paperclip-images-icons ">
-				<%= link_to image_tag("add.png", alt: "Upload Image", title: "Upload"), new_paperclip_image_path %>
-			</p>
+<div class="col-sm-12">
+	<div class="col-sm-6">
+		<h3>To Do Lists</h3>
 
-	<% else %>
-		<%= link_to image_tag(@paperclip_image.asset.url(:medium), class: "img-thumbnail"), @paperclip_image.asset.url %>
-		<div class="col-sm-12">
-			<p class="paperclip-images-icons ">
-				<%= link_to image_tag("edit.png", alt: "Reupload Image", title: "Reupload Image"), edit_paperclip_image_path(@paperclip_image) %>
-				<%= link_to image_tag("list.png", alt: "See All Images", title: "See All Images"), paperclip_images_path %>
-			</p>
-		</div>
-	<% end %>
+		<% @todo_lists.each do |todo_list| %>
+			<div class="todo-list">
+				<div class="todo-list" "hover" id="<%= dom_id(todo_list) %>">
+					<p>
+						Title: <%= todo_list.title %>
+						<br />
+						Description: <%= todo_list.description %>
+					</p>
+					<p class="todo-lists-icons">
+						<%= link_to image_tag("list.png", alt: "List Items", title: "List Items"), todo_list_todo_items_path(todo_list) %>
+						<span class="admin-todo-list">
+							<%= link_to image_tag("edit.png", alt: "Edit To Do List", title: "Edit To Do List"), edit_todo_list_path(todo_list) %>
+					    <%= link_to image_tag("delete.png", alt: "Delete To Do List", title: "Delete To Do List"), todo_list, method: :delete, data: { confirm: "Are you sure?" } %>
+						</span>
+					</p>
+					<hr>
+				</div>
+			</div>	
+		<% end %>
+
+
+		<p>
+			<%= link_to "New To Do List", new_todo_list_path %>
+		</p>
+	</div>
+
+	<div class="col-sm-6">
+		<h3> Latest Prototype </h3>
+		<% if @paperclip_image.nil? %>
+			<h4>no prototypes available</h4>
+			<div class="col-sm-12">
+				<p class="paperclip-images-icons ">
+					<%= link_to image_tag("add.png", alt: "Upload Image", title: "Upload"), new_paperclip_image_path %>
+				</p>
+
+		<% else %>
+			<%= link_to image_tag(@paperclip_image.asset.url(:medium), class: "img-thumbnail"), @paperclip_image.asset.url %>
+			<div class="col-sm-12">
+				<p class="paperclip-images-icons ">
+					<%= link_to image_tag("edit.png", alt: "Reupload Image", title: "Reupload Image"), edit_paperclip_image_path(@paperclip_image) %>
+					<%= link_to image_tag("list.png", alt: "See All Images", title: "See All Images"), paperclip_images_path %>
+				</p>
+			</div>
+		<% end %>
+	</div>
 </div>

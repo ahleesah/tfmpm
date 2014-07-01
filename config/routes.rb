@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "completed_tasks_charts", to: "charts#completed_tasks"
+  
   devise_for :users
 
   devise_scope :user do
@@ -7,11 +9,11 @@ Rails.application.routes.draw do
     get "logout", to: "devise/sessions#destroy"
 
     authenticated :user do
-      root 'dashboards#index', as: :authenticated_root
+      root "dashboards#index", as: :authenticated_root
     end
 
     unauthenticated do
-      root 'devise/sessions#new', as: :unauthenticated_root
+      root "devise/sessions#new", as: :unauthenticated_root
     end
   end
   
