@@ -5872,6 +5872,7 @@ button.close {
 
  */
 
+/* Mobile first */
 
 body {
 	text-align: center;
@@ -5983,10 +5984,13 @@ a:hover {
 	border-bottom: thin dotted;
 }
 
-.form-field-width {
-	width: 30%;
-	display: block;
-	padding: 0;
-	margin-left: auto;
-	margin-right: auto;
+/* Beyond smart phone resizing */
+@media screen and (min-width: 480px) {
+	.form-field-width {
+		width: 30%;
+		display: block;
+		padding: 0;
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
